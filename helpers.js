@@ -1,13 +1,22 @@
 module.exports = {
 	/**
 	 * Does what it says.
-	 * @param fileName
+	 * @param {string} fileName
+	 * @param {boolean} splitLines
 	 * @return {Promise<unknown>}
 	 */
-	readFile: ( fileName = '' ) => {
+	readFile: ( fileName = '', splitLines = false ) => {
 		return new Promise( ( resolve, reject ) => {
 			require( 'fs' ).readFile( fileName, 'utf8', ( error, contents ) => {
-				error ? reject( error ) : resolve( contents );
+				if ( error ) {
+					reject( error );
+				} else {
+					if ( splitLines ) {
+						contents = contents.split( '\r\n' );
+					}
+
+					resolve( contents );
+				}
 			} );
 		} )
 	}
