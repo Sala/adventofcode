@@ -12,7 +12,7 @@ module.exports = {
 					reject( error );
 				} else {
 					if ( splitLines ) {
-						contents = contents.split( '\r\n' );
+						contents = contents.split( '\r\n' ).filter( line => line.trim().length );
 					}
 
 					resolve( contents );
