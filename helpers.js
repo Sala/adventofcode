@@ -3,7 +3,7 @@ module.exports = {
 	 * Does what it says.
 	 * @param {string} fileName
 	 * @param {boolean} splitLines
-	 * @return {Promise<unknown>}
+	 * @return {Promise<Array>}
 	 */
 	readFile: ( fileName = '', splitLines = false ) => {
 		return new Promise( ( resolve, reject ) => {
