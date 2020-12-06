@@ -1,4 +1,4 @@
-const {readFile} = require( '../../helpers' );
+import {readFile} from '../../helpers.js'
 
 readFile( 'input.txt', true ).then( tickets => {
 	tickets = tickets.map( ticket => parseTicket( ticket ) )

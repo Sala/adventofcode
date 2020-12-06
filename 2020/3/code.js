@@ -1,4 +1,4 @@
-const {readFile} = require( '../../helpers' );
+import {readFile} from '../../helpers.js'
 let matrix = [], patternLength, slopeHeight;
 
 readFile( 'input.txt', true ).then( lines => {

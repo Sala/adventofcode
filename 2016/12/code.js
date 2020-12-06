@@ -1,4 +1,4 @@
-const {readFile} = require( '../../helpers' );
+import {readFile} from '../../helpers.js'
 let instructions = [],
 	variables = {a: 0, b: 0, c: 1, d: 0}
 

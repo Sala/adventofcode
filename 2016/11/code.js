@@ -1,5 +1,6 @@
-const {readFile} = require( '../../helpers' );
-const Container = require( './container' )
+import {readFile} from '../../helpers.js'
+import Container from './container.js';
+
 const startingFloorIndex = 0;
 
 const elevator = new Container( startingFloorIndex )

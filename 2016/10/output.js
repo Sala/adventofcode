@@ -17,4 +17,4 @@ class Output {
 	}
 }
 
-module.exports = Output;
+export default Output;

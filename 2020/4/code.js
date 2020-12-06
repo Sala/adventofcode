@@ -1,4 +1,4 @@
-const {readFile} = require( '../../helpers' );
+import {readFile} from '../../helpers.js'
 const fields = [
 	'byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid',
 	//'cid'

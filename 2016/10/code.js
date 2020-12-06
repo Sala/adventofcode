@@ -1,8 +1,8 @@
-const {readFile} = require( '../../helpers' ),
-	Bot = require( './bot' ),
-	Output = require( './output' ),
-	bots = {},
-	outputs = {};
+import {readFile} from '../../helpers.js'
+import Bot from './bot.js'
+import Output from './output.js';
+
+const bots = {}, outputs = {};
 
 readFile( 'input.txt' ).then( input => {
 
