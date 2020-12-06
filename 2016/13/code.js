@@ -1,4 +1,4 @@
-const {readFile, dec2bin, surroundingPositions} = require( '../../helpers' );
+const { dec2bin, surroundingPositions} = require( '../../helpers' );
 const KEY = 1362
 const xLength = 50, yLength = 50;
 const startingX = 1, startingY = 1;

@@ -1,0 +1,9 @@
+{
+  "name": "adventofcode",
+  "description": "Advent of Code",
+  "version": "1.0.0",
+  "type": "module",
+  "devDependencies": {
+    "hash-wasm": "^4.4.1"
+  }
+}
