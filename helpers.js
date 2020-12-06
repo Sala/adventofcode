@@ -19,5 +19,32 @@ module.exports = {
 				}
 			} );
 		} )
+	},
+	/**
+	 * Convert decimal to binary
+	 * @param dec
+	 * @return string
+	 */
+	dec2bin: dec => ( dec >>> 0 ).toString( 2 ),
+	/**
+	 * Matrix surrounding positions
+	 * @returns {({x: number, y: number}|{x: number, y: number}|{x: number, y: number}|{x: number, y: number}|{x: number, y: number})[]}
+	 */
+	surroundingPositions: ( x = null, y = null, includeDiagonals = false ) => {
+		const positions = [
+			{x: 0, y: - 1},
+			{x: - 1, y: 0},
+			{x: 1, y: 0},
+			{x: 0, y: 1},
+		]
+
+		if ( includeDiagonals ) {
+			positions.push( {x: - 1, y: - 1} )
+			positions.push( {x: 1, y: - 1} )
+			positions.push( {x: - 1, y: 1} )
+			positions.push( {x: 1, y: 1} )
+		}
+
+		return ( x === null || y === null ) ? positions : positions.map( position => ( {x: x + position.x, y: y + position.y} ) )
 	}
 }
