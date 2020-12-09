@@ -53,7 +53,21 @@ function surroundingPositions( x = null, y = null, includeDiagonals = false ) {
 	return ( x === null || y === null ) ? positions : positions.map( position => ( {x: x + position.x, y: y + position.y} ) )
 }
 
+/**
+ * Calculate the sum of numbers in an array or sent as parameters
+ * @param numbers
+ * @return {T|number}
+ */
+function sum( numbers ) {
+	if ( arguments.length > 1 ) {
+		numbers = Array.from( arguments )
+	}
+
+	return numbers.length ? numbers.reduce( ( sum, n ) => sum + n ) : 0
+}
+
 export {
+	sum,
 	readFile,
 	dec2bin,
 	surroundingPositions
