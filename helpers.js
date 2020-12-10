@@ -56,7 +56,7 @@ function surroundingPositions( x = null, y = null, includeDiagonals = false ) {
 /**
  * Calculate the sum of numbers in an array or sent as parameters
  * @param numbers
- * @return {T|number}
+ * @return {number}
  */
 function sum( numbers ) {
 	if ( arguments.length > 1 ) {
@@ -66,9 +66,34 @@ function sum( numbers ) {
 	return numbers.length ? numbers.reduce( ( sum, n ) => sum + n ) : 0
 }
 
+/**
+ * Calculate the product of numbers in an array or sent as parameters
+ * @param numbers
+ * @return {number}
+ */
+function multiply( numbers ) {
+	if ( arguments.length > 1 ) {
+		numbers = Array.from( arguments )
+	}
+
+	return numbers.length ? numbers.reduce( ( sum, n ) => sum * n, 1 ) : 1
+}
+
+/**
+ * Are those two arrays having the same elements?
+ * @param firstArray
+ * @param secondArray
+ * @return {*}
+ */
+function sameArrays( firstArray, secondArray ) {
+	return firstArray.every( ( element, index ) => element === secondArray[ index ] )
+}
+
 export {
 	sum,
-	readFile,
 	dec2bin,
+	readFile,
+	multiply,
+	sameArrays,
 	surroundingPositions
 }
