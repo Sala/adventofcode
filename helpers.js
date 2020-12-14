@@ -32,6 +32,15 @@ function dec2bin( dec ) {
 }
 
 /**
+ * Convert number from binary to decimal
+ * @param bin
+ * @return {number}
+ */
+function bin2dec( bin ) {
+	return parseInt( bin, 2 );
+}
+
+/**
  * Matrix surrounding positions
  * @returns {({x: number, y: number}|{x: number, y: number}|{x: number, y: number}|{x: number, y: number}|{x: number, y: number})[]}
  */
@@ -92,6 +101,7 @@ function sameArrays( firstArray, secondArray ) {
 export {
 	sum,
 	dec2bin,
+	bin2dec,
 	readFile,
 	multiply,
 	sameArrays,
