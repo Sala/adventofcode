@@ -85,7 +85,7 @@ function multiply( numbers ) {
 		numbers = Array.from( arguments )
 	}
 
-	return numbers.length ? numbers.reduce( ( sum, n ) => sum * n, 1 ) : 1
+	return numbers.length ? numbers.reduce( ( product, n ) => product * n, 1 ) : 1
 }
 
 /**
