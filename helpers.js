@@ -98,12 +98,64 @@ function sameArrays( firstArray, secondArray ) {
 	return firstArray.every( ( element, index ) => element === secondArray[ index ] )
 }
 
+/**
+ *
+ * @param matrix
+ * @param stringLines
+ * @return {*}
+ */
+function xFlipMatrix( matrix, stringLines = false ) {
+	return matrix.map( row => stringLines ? row.split( '' ).reverse().join( '' ) : row.reverse() )
+}
+
+/**
+ *
+ * @param matrix
+ * @return {*}
+ */
+function yFlipMatrix( matrix ) {
+	for ( let i = 0; i < matrix.length / 2; i ++ ) {
+		let aux = matrix[ i ];
+		matrix[ i ] = matrix[ matrix.length - 1 - i ]
+		matrix[ matrix.length - 1 - i ] = aux;
+	}
+
+	return matrix
+}
+
+/**
+ *
+ * @param matrix
+ * @param stringLines
+ * @return {(*)[]}
+ */
+function rotateMatrix( matrix, stringLines = false ) {
+	let newM = []
+
+	for ( let i = 0; i < matrix.length; i ++ ) {
+		newM[ i ] = []
+		for ( let j = 0; j < matrix.length; j ++ ) {
+			newM[ i ][ j ] = matrix[ j ][ matrix.length - 1 - i ]
+		}
+	}
+
+	return newM.map( line => stringLines ? line.join( '' ) : line )
+}
+
+function deepCopy( object ) {
+	return JSON.parse( JSON.stringify( object ) )
+}
+
 export {
 	sum,
 	dec2bin,
 	bin2dec,
 	readFile,
+	deepCopy,
 	multiply,
 	sameArrays,
+	xFlipMatrix,
+	yFlipMatrix,
+	rotateMatrix,
 	surroundingPositions
 }
