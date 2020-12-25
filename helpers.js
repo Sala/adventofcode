@@ -146,6 +146,22 @@ function deepCopy( object ) {
 	return JSON.parse( JSON.stringify( object ) )
 }
 
+/**
+ * Generation permutations without repeating same letters
+ * @param {Array} letters
+ * @param {String} currentVariation
+ * @param {Array} variations
+ */
+function generateVariations( letters, currentVariation = '', variations = [] ) {
+	if ( letters.length === 0 ) {
+		variations.push( currentVariation )
+	} else {
+		letters.forEach( letter => {
+			generateVariations( [ ...letters.filter( l => l !== letter ) ], currentVariation + letter, variations )
+		} )
+	}
+}
+
 export {
 	sum,
 	dec2bin,
@@ -157,5 +173,6 @@ export {
 	xFlipMatrix,
 	yFlipMatrix,
 	rotateMatrix,
+	generateVariations,
 	surroundingPositions
 }
